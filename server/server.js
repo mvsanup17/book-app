@@ -6,14 +6,14 @@ const app = express();
 const PORT = 5000;
 
 app.use(cors({
-    origin : "http://localhost:3000"
+    origin : "https://book-finder-mern.netlify.app/"
 }));
 app.use(express.json());
 
 const GOOGLE_BOOKS_API = "https://www.googleapis.com/books/v1/volumes";
 
 // API Route
-app.get('/api/search', async (req, res) => {
+app.get('/', async (req, res) => {
   const query = req.query.q;
   if (!query) {
     return res.json([]);
